@@ -1,6 +1,12 @@
 function Button(props) {
   return (
-    <button className='flex justify-center items-center gap-2 px-7 py-4 border font-montserrat text-lg leading-none bg-coral-red rounded-full text-white border-r-coral-red'>
+    <button
+      className={`flex justify-center items-center gap-2 px-7 py-4 border font-montserrat text-lg leading-none rounded-full ${
+        props.backgroundColor
+          ? `${props.backgroundColor} ${props.textColor} ${props.borderColor}`
+          : `bg-coral-red text-white border-coral-red`
+      }`}
+    >
       {props.label}
       {props.iconURL && (
         <img
